@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:wewear/presentation/modules/home/bottom_nav.dart';
 import 'package:wewear/presentation/modules/home/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -42,8 +43,7 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   loginRoute() {
-
-    Get.to(() => HomePage(), transition: Transition.fade);
+    Get.to(() => BottomNav(), transition: Transition.fade);
     // Navigator.pushReplacement(
     //     context, MaterialPageRoute(builder: (context) => const HomePage()));
   }
