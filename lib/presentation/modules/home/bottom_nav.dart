@@ -2,31 +2,38 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:wewear/presentation/modules/home/provider/bottom-nav-provider.dart';
+import 'package:wewear/presentation/modules/product/product-screen.dart';
 
 class BottomNav extends ConsumerWidget {
   BottomNav({super.key});
 
-  List<Widget> pageList = [
-    Center(
-      child: Text('Page1'),
-    ),
-    Center(
-      child: Text('Page2'),
-    ),
-    Center(
-      child: Text('Page3'),
-    ),
-    Center(
-      child: Text('Page4'),
-    ),
-    Center(
-      child: Text('Page5'),
-    ),
-  ];
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     int pageIndex = ref.watch(navProvider);
+
+    List<Widget> pageList = [
+      Center(
+        child: Text('Page1'),
+      ),
+      ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ProductScreen(),
+                ));
+          },
+          child: Text("product")),
+      Center(
+        child: Text('Page3'),
+      ),
+      Center(
+        child: Text('Page4'),
+      ),
+      Center(
+        child: Text('Page5'),
+      ),
+    ];
 
     return Scaffold(
       backgroundColor: const Color(0xffE2E2E2),
