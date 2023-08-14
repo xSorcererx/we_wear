@@ -39,8 +39,8 @@ class ShoeSizeWidget extends StatelessWidget {
                   width: 40,
                   decoration: BoxDecoration(
                     color: sizeIndex == index
-                        ? Colors.black
-                        : Colors.grey.withOpacity(0.5),
+                        ? Color(0xff267C9D)
+                        : Color(0xff267C9D).withOpacity(0.2),
                     shape: BoxShape.circle,
                   ),
                   child: Text(

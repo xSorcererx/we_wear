@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:wewear/presentation/modules/cart/cart-screen.dart';
+import 'package:wewear/presentation/modules/favourite/favourite-screen.dart';
 import 'package:wewear/presentation/modules/home/provider/bottom-nav-provider.dart';
 import 'package:wewear/presentation/modules/product/product-screen.dart';
+import 'package:wewear/presentation/modules/profile/profile_screen.dart';
 
 class BottomNav extends ConsumerWidget {
   BottomNav({super.key});
@@ -12,27 +15,15 @@ class BottomNav extends ConsumerWidget {
     int pageIndex = ref.watch(navProvider);
 
     List<Widget> pageList = [
-      Center(
+      const Center(
         child: Text('Page1'),
       ),
-      ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ProductScreen(),
-                ));
-          },
-          child: Text("product")),
-      Center(
-        child: Text('Page3'),
+      const Center(
+        child: Text('Page1'),
       ),
-      Center(
-        child: Text('Page4'),
-      ),
-      Center(
-        child: Text('Page5'),
-      ),
+      const FavouriteScreen(),
+      const CartScreen(),
+      const ProfileScreen()
     ];
 
     return Scaffold(
