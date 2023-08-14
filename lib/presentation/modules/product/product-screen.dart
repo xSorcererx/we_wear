@@ -34,7 +34,9 @@ class _ProductScreenState extends State<ProductScreen> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(CupertinoIcons.heart),
+            icon: const Icon(
+              CupertinoIcons.heart,
+            ),
           )
         ],
       ),
